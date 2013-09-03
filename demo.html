@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<meta name="viewport" content="width=device-width">
+	<meta name="author" content="Andreas Larsson">
+	<meta name="description" content="reMorse converts text into Morse code.">
+	<title>reMorse demo</title>
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/reMorse.js"></script>
+</head>
+<body>
+	<header class="header">
+		<img class="logo" src="images/logo-remorse.png" alt="reMorse logotype"/>
+	</header>
+	<main class="main" role="main">
+		<div class="inputs">
+			<h1 class="main-title">Human</h1>
+			<textarea type="text" id="txt-enc" class="input-huge" placeholder="Write something.."></textarea>
+		</div>
+		<div class="outputs">
+			<h1 class="main-title">Morse</h1>
+			<div id="enc-result" class="result-box"></div>
+		</div>
+	</main>
+	<footer class="footer">
+		<p class="outro">reMorse converts text into Morse code. That is all.</p>
+	</footer>
+	<script>
+		(function (doc) {
+			var txtEnc = doc.getElementById('txt-enc'),
+				encResult = doc.getElementById('enc-result');
+			
+			txtEnc.addEventListener('keyup', function (event) {
+				encResult.innerHTML = reMorse(event.target.value, {
+					charSeparator : '&nbsp;&nbsp;',
+					wordSeparator : '',
+					wordBefore : '<span class="word">',
+					wordAfter : '</span>'
+				});
+			});
+		})(document);
+	</script>
+	<link href="http://fonts.googleapis.com/css?family=Rokkitt" rel="stylesheet" type="text/css">
+</body>
+</html>
