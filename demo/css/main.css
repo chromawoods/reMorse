@@ -42,7 +42,7 @@ body, textarea { font-family: Rokkitt, serif; }
 .footer { padding: 1em; }
 
 @media all and (max-width: 640px) {
-	.inputs, .outputs { width: 100%; }
+	.inputs, .outputs { width: 100%; margin-bottom: 0; }
     .main-title { text-align: center; }
     .intro { padding: 0 2em; font-size: .9em; }
     .logo { max-width: 120px; }
