@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="Andreas Larsson">
+    <meta name="description" content="reMorse converts text into Morse code.">
+    <title>reMorse demo</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="../js/reMorse.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <img class="logo" src="images/logo-remorse.png" alt="reMorse logotype"/>
+        <p class="intro">reMorse converts text into Morse code. That is all.</p>
+        <a href="https://github.com/chromawoods/reMorse/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
+    </header>
+    <main class="main" role="main">
+        <div class="inputs">
+            <h1 class="main-title">Human</h1>
+            <textarea type="text" id="txt-enc" class="input-huge" placeholder="Write something.."></textarea>
+        </div>
+        <div class="outputs">
+            <h1 class="main-title">Morse</h1>
+            <div id="enc-result" class="result-box"></div>
+        </div>
+    </main>
+    <footer class="footer">
+        <a href="http://chromawoods.com/" title="Visit me!" target="_blank">Visit me!</a>
+    </footer>
+    <script>
+        (function (doc) {
+            var txtEnc = doc.getElementById('txt-enc'),
+                encResult = doc.getElementById('enc-result');
+
+            txtEnc.addEventListener('keyup', function (event) {
+                encResult.innerHTML = reMorse(event.target.value, {
+                    charSeparator : '&nbsp;&nbsp;',
+                    wordSeparator : '',
+                    wordBefore : '<span class="word">',
+                    wordAfter : '</span>'
+                });
+            });
+        })(document);
+        
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-23289011-1']);
+                        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <link href="http://fonts.googleapis.com/css?family=Rokkitt" rel="stylesheet" type="text/css">
+</body>
+</html>
