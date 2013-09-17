@@ -1,3 +1,9 @@
+/**
+ * reMorse - Translates text to morse code.
+ * Script home: https://github.com/chromawoods/reMorse/
+ * Author: Andreas Larsson
+ * Contact: andreas@chromawoods.com
+ */
 var reMorse = (function (window) {
 
 /* Constants
@@ -7,8 +13,7 @@ var reMorse = (function (window) {
 		DEBUG = false,
 		
 		MORSE_TYPES = [
-			{ type : 'international', description : 'International (ITU)' },
-			{ type : 'wabun', description : 'Wabun/Kana code' }
+			{ type : 'international', description : 'International (ITU)' }
 		],
 		
 		DEFAULTS = {
